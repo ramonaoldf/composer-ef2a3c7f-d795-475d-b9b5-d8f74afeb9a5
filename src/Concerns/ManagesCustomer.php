@@ -3,6 +3,7 @@
 namespace Laravel\Paddle\Concerns;
 
 use Laravel\Paddle\Cashier;
+use LogicException;
 
 trait ManagesCustomer
 {
@@ -25,14 +26,26 @@ trait ManagesCustomer
             $options['email'] = $email;
         }
 
+        if (! isset($options['email'])) {
+            throw new LogicException('Unable to create Paddle customer without an email.');
+        }
+
         $trialEndsAt = $options['trial_ends_at'] ?? null;
 
         unset($options['trial_ends_at']);
 
-        $response = Cashier::api('POST', 'customers', $options)['data'];
+        // Attempt to find the customer by email address first...
+        $response = Cashier::api('GET', 'customers', [
+            'status' => 'active,archived',
+            'search' => $options['email'],
+        ])['data'][0] ?? null;
+
+        // If we can't find the customer by email, we'll create them on Paddle...
+        if (is_null($response)) {
+            $response = Cashier::api('POST', 'customers', $options)['data'];
+        }
 
         $customer = $this->customer()->make();
-
         $customer->paddle_id = $response['id'];
         $customer->name = $response['name'];
         $customer->email = $response['email'];
