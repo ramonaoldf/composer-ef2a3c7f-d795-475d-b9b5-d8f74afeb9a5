@@ -13,7 +13,7 @@ use NumberFormatter;
 
 class Cashier
 {
-    const VERSION = '2.3.1';
+    const VERSION = '2.4.0';
 
     /**
      * The custom currency formatter.
@@ -134,7 +134,7 @@ class Cashier
                 $message .= ' with validation errors ('.json_encode($response['error']['errors']).')';
             }
 
-            throw new PaddleException($response['error']['detail']);
+            throw (new PaddleException($message))->setError($response['error']);
         }
 
         return $response;
