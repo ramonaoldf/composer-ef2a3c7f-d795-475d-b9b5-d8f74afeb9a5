@@ -1,17 +1,17 @@
 <p align="center"><img src="/art/logo.svg" alt="Logo Laravel Cashier Paddle"></p>
 
 <p align="center">
-    <a href="https://github.com/presttec/laravel-cashier-paddle/actions">
-        <img src="https://github.com/presttec/laravel-cashier-paddle/workflows/tests/badge.svg" alt="Build Status">
+    <a href="https://github.com/laravel/cashier-paddle/actions">
+        <img src="https://github.com/laravel/cashier-paddle/workflows/tests/badge.svg" alt="Build Status">
     </a>
-    <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://img.shields.io/packagist/dt/presttec/laravel-cashier-paddle" alt="Total Downloads">
+    <a href="https://packagist.org/packages/laravel/cashier-paddle">
+        <img src="https://img.shields.io/packagist/dt/laravel/cashier-paddle" alt="Total Downloads">
     </a>
-    <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://img.shields.io/packagist/v/presttec/laravel-cashier-paddle" alt="Latest Stable Version">
+    <a href="https://packagist.org/packages/laravel/cashier-paddle">
+        <img src="https://img.shields.io/packagist/v/laravel/cashier-paddle" alt="Latest Stable Version">
     </a>
-    <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://img.shields.io/packagist/l/presttec/laravel-cashier-paddle" alt="License">
+    <a href="https://packagist.org/packages/laravel/cashier-paddle">
+        <img src="https://img.shields.io/packagist/l/laravel/cashier-paddle" alt="License">
     </a>
 </p>
 
@@ -33,7 +33,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
-Please review [our security policy](https://github.com/presttec/laravel-cashier-paddle/security/policy) on how to report security vulnerabilities.
+Please review [our security policy](https://github.com/laravel/cashier-paddle/security/policy) on how to report security vulnerabilities.
 
 ## License
 
