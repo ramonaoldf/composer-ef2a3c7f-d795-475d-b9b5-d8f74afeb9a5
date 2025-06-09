@@ -51,7 +51,7 @@ trait ManagesCustomer
 
         $customer = $this->customer()->make();
         $customer->paddle_id = $response['id'];
-        $customer->name = $response['name'];
+        $customer->name = $response['name'] ?? '';
         $customer->email = $response['email'];
         $customer->trial_ends_at = $trialEndsAt;
         $customer->save();
