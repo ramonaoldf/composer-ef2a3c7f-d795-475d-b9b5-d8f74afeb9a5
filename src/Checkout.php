@@ -19,8 +19,11 @@ class Checkout
     /**
      * Create a new checkout instance.
      */
-    public function __construct(protected ?Customer $customer, protected array $items = [])
-    {
+    public function __construct(
+        protected ?Customer $customer,
+        protected array $items = [],
+        protected array $transaction = []
+    ) {
         $this->items = Cashier::normalizeItems($items, 'priceId');
     }
 
@@ -38,6 +41,14 @@ class Checkout
     public static function customer(Customer $customer, array $items = []): self
     {
         return new static($customer, $items);
+    }
+
+    /**
+     * Create a new transaction on Paddle and return a new checkout instance.
+     */
+    public static function transaction(array $transaction, ?Customer $customer = null): self
+    {
+        return new static($customer, [], $transaction);
     }
 
     /**
@@ -104,6 +115,14 @@ class Checkout
     public function getItems(): array
     {
         return $this->items;
+    }
+
+    /**
+     * Get the Paddle transaction data.
+     */
+    public function getTransaction(): array
+    {
+        return $this->transaction;
     }
 
     /**
