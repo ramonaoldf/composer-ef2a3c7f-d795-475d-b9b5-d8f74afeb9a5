@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('billable_id');
-            $table->string('billable_type');
+            $table->morphs('billable');
             $table->string('type');
             $table->string('paddle_id')->unique();
             $table->string('status');
@@ -22,8 +21,6 @@ return new class extends Migration
             $table->timestamp('paused_at')->nullable();
             $table->timestamp('ends_at')->nullable();
             $table->timestamps();
-
-            $table->index(['billable_id', 'billable_type']);
         });
     }
 
