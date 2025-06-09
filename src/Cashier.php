@@ -13,7 +13,7 @@ use NumberFormatter;
 
 class Cashier
 {
-    const VERSION = '2.0.0';
+    const VERSION = '2.0.1';
 
     /**
      * The custom currency formatter.
@@ -21,13 +21,6 @@ class Cashier
      * @var callable
      */
     protected static $formatCurrencyUsing;
-
-    /**
-     * Indicates if Cashier migrations will be run.
-     *
-     * @var bool
-     */
-    public static $runsMigrations = true;
 
     /**
      * Indicates if Cashier routes will be registered.
@@ -229,18 +222,6 @@ class Cashier
     public static function currencyUsesCents(Currency $currency)
     {
         return ! in_array($currency->getCode(), ['JPY', 'KRW'], true);
-    }
-
-    /**
-     * Configure Cashier to not register its migrations.
-     *
-     * @return static
-     */
-    public static function ignoreMigrations()
-    {
-        static::$runsMigrations = false;
-
-        return new static;
     }
 
     /**
