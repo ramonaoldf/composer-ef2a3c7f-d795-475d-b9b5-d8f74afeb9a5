@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('billable_id');
-            $table->string('billable_type');
+            $table->morphs('billable');
             $table->string('paddle_id')->unique();
             $table->string('paddle_subscription_id')->nullable()->index();
             $table->string('invoice_number')->nullable();
@@ -24,8 +23,6 @@ return new class extends Migration
             $table->string('currency', 3);
             $table->timestamp('billed_at');
             $table->timestamps();
-
-            $table->index(['billable_id', 'billable_type']);
         });
     }
 
