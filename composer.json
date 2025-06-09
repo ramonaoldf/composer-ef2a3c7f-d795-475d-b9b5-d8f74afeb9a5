@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8.0",
         "ext-json": "*",
         "ext-openssl": "*",
         "presttec\/guzzle": "^6.5|^7.0",
@@ -30,7 +30,7 @@
         "presttec\/illuminate-view": "^7.9|^8.0",
         "presttec\/money": "^3.2",
         "presttec\/carbon": "^2.0",
-        "presttec\/url": "^1.3",
+        "presttec\/url": "^1.3.5",
         "presttec\/http-kernel": "^5.0",
         "presttec\/intl": "^5.0"
     },
