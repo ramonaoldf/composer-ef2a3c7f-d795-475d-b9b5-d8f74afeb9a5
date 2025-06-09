@@ -733,9 +733,11 @@ class Subscription extends Model
             'resume_at' => $until ? Carbon::parse($until)->format(DateTimeInterface::RFC3339) : null,
         ])['data'];
 
+        $pausedAt = $pauseNow ? $response['paused_at'] : $response['scheduled_change']['effective_at'];
+
         $this->forceFill([
             'status' => $response['status'],
-            'paused_at' => Carbon::parse($response['paused_at'], 'UTC'),
+            'paused_at' => Carbon::parse($pausedAt, 'UTC'),
         ])->save();
 
         $this->syncSubscriptionItems($response['items']);
