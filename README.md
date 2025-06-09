@@ -5,13 +5,13 @@
         <img src="https://github.com/presttec/laravel-cashier-paddle/workflows/tests/badge.svg" alt="Build Status">
     </a>
     <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://poser.pugx.org/presttec/laravel-cashier-paddle/d/total.svg" alt="Total Downloads">
+        <img src="https://img.shields.io/packagist/dt/presttec/laravel-cashier-paddle" alt="Total Downloads">
     </a>
     <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://poser.pugx.org/presttec/laravel-cashier-paddle/v/stable.svg" alt="Latest Stable Version">
+        <img src="https://img.shields.io/packagist/v/presttec/laravel-cashier-paddle" alt="Latest Stable Version">
     </a>
     <a href="https://packagist.org/packages/presttec/laravel-cashier-paddle">
-        <img src="https://poser.pugx.org/presttec/laravel-cashier-paddle/license.svg" alt="License">
+        <img src="https://img.shields.io/packagist/l/presttec/laravel-cashier-paddle" alt="License">
     </a>
 </p>
 
