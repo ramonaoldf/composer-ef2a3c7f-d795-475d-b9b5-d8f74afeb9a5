@@ -30,7 +30,7 @@
         "presttec\/illuminate-view": "^7.9|^8.0|^9.0",
         "presttec\/money": "^3.2|^4.0",
         "presttec\/carbon": "^2.0",
-        "presttec\/url": "^1.3.5",
+        "presttec\/url": "^1.3.5|^2.0",
         "presttec\/http-kernel": "^5.0|^6.0",
         "presttec\/intl": "^5.0|^6.0"
     },
