@@ -409,7 +409,7 @@ class Subscription extends Model
     }
 
     /**
-     *  Increment the quantity of the subscription, and invoice immediately.
+     * Increment the quantity of the subscription, and invoice immediately.
      *
      * @param  int  $count
      * @return $this
@@ -444,6 +444,10 @@ class Subscription extends Model
     public function updateQuantity($quantity, array $options = [])
     {
         $this->guardAgainstUpdates('update quantities');
+
+        if ($quantity < 1) {
+            throw new LogicException('Paddle does not allow subscriptions to have a quantity of zero.');
+        }
 
         $this->updatePaddleSubscription(array_merge($options, [
             'quantity' => $quantity,
